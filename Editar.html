@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<script>
+// BLOQUEIO INSTANTÂNEO
+        if (localStorage.getItem("temaSelecionado") === "claro") {
+            document.documentElement.classList.add("fundo-claro");
+        }
+
+        // Esse código roda antes de qualquer elemento (inclusive o containerp) ser lido
+        (function() {
+            if (localStorage.getItem("temaSelecionado") === "claro") {
+                document.documentElement.classList.add("fundo-claro");
+            }
+        })();
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <title>Nekolock</title>
+</head>
+<body>
+
+
+
+
+
+    
+<div class="containerp">
+    <div class="logo-container" id="btntema">
+    <img src="images/Nekolock icon.png" class="logo-dark">
+    
+    <img src="images/Nekolock iconw.png" class="logo-light">
+</div>
+
+    <div>
+        <a href="Inicio.html" class="nolink"><button class="btnmenu">Início &#x1F3E0</button></a>
+       <a href="Buscar.html" class="nolink"> <button class="btnmenu">Buscar &#x1F50E</button></a> <br>
+       <a href="Adicionar.html" class="nolink"> <button class="btnmenu">Adicionar &#x2795</button></a>
+        <a href="Editar.html" class="nolink"><button class="btnmenu">Editar &#x1FA9B</button></a> 
+
+         </div>
+         <a href="Backup.html" class="nolink"><button class="btnbackup">&#x1F4C4 Backup &#x1F511</button></a>
+</div>
+
+
+              
+          <div class="containers">
+
+    <div id="painel-admin">
+    
+            <fieldset class="filo" style="word-wrap: break-word; overflow-wrap: break-word; word-break: break-all;">
+    <h2 class="he" style="text-align: center;">Editor de Senhas</h2>
+    <hr>
+    <ul id="listaGestao" class="busque"></ul>
+</fieldset>
+
+<div id="form-edicao" class="modal-overlay">
+    <div class="modal-content">
+        <div>
+            <h2 class="he">Editar Senha</h2>
+            <input type="hidden" id="edit-id">
+            
+            <div class="campo-edicao">
+                <label for="edit-nome" class="he">Nome:</label>
+                <input type="text" id="edit-nome" placeholder="Nome do serviço">
+            </div>
+            
+            <div class="campo-edicao">
+                <label for="edit-pass" class="he">Senha:</label>
+                <input type="text" id="edit-pass" placeholder="Sua senha">
+            </div>
+            
+            <div>
+                <button onclick="salvarEdicao()" class="btnatualizar">Atualizar</button>
+                <button onclick="cancelarEdicao()" class="btncancelar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

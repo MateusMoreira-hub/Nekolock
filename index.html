@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<script>
+// BLOQUEIO INSTANTÂNEO
+        if (localStorage.getItem("temaSelecionado") === "claro") {
+            document.documentElement.classList.add("fundo-claro");
+        }
+
+        // Esse código roda antes de qualquer elemento (inclusive o containerp) ser lido
+        (function() {
+            if (localStorage.getItem("temaSelecionado") === "claro") {
+                document.documentElement.classList.add("fundo-claro");
+            }
+        })();
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <title>Nekolock</title>
+</head>
+<body class="animar-entrada">
+
+
+
+<div id="camada-seguranca" style="position: fixed; top:0; left:0; width:100%; height:100%; background: #121212; z-index: 10000; display: flex; align-items: center; justify-content: center; font-family: sans-serif;">
+
+   
+    
+    <div style="background: #1e1e1e; padding: 30px; border-radius: 12px; text-align: center; width: 90%; max-width: 400px; border: 1px solid #333;">
+
+         <img src="images/Nekolock atualização.png" class="logo" alt="Nekolock configuração">
+
+        <h2 id="titulo-seguranca" style="color: #fff;"></h2>
+        <p id="desc-seguranca" style="color: #aaa;"></p>
+
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+            <input type="password" id="senha-principal" placeholder="Senha Felina" style="padding: 12px; border-radius: 6px; border: 1px solid #444; background: #2a2a2a; color: white;">
+            
+            <input type="password" id="senha-confirmar" placeholder="Confirme a Senha" style="padding: 12px; border-radius: 6px; border: 1px solid #444; background: #2a2a2a; color: white; display: none;">
+            
+            <button id="btn-entrar" onclick="processarAcesso()" style="padding: 12px; border: none; border-radius: 6px; background: #007bff; color: white; font-weight: bold; cursor: pointer;">
+                Acessar
+            </button>
+
+            <div style="margin-top: 20px; border-top: 1px solid #333; padding-top: 15px;">
+                <a href="#" onclick="resetarCofre()" style="color: #ff4d4d; font-size: 13px; text-decoration: none;">
+                    Resetar Nekolock
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    
+    <script src="js/main.js">
+
+
+    </script>
+
+</body>
+</html>

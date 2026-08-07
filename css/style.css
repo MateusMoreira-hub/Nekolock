@@ -1,0 +1,897 @@
+/* 1. Garante que a base do site tenha altura total */
+html {
+    min-height: 100%;
+    transition: background-color 0.3s;
+}
+
+/* 2. Cor de fundo para o modo ESCURO (Padrão) */
+html:not(.fundo-claro) {
+     background-color: #1a1a1a; /* Tua cor escura */
+}
+
+/* 3. Cor de fundo para o modo CLARO (Remove o amarelado) */
+html.fundo-claro {
+    background-color: #ffffff; /* Ou a cor exata que preferires */
+}
+
+/* 4. O body deve herdar a cor do html para não haver conflito */
+body {
+    background-color: transparent; 
+}
+
+
+
+body {
+    margin: 0;
+    transition: background-color 0.3s; /* Opcional: para suavizar */
+    color: white;
+}
+
+/* Define o padrão (escuro) */
+html:not(.fundo-claro) body {
+    background-color: #1a1a1a; /* Tua cor escura */
+    color: white;
+}
+
+/* Define o claro */
+html.fundo-claro body {
+    background-color: #ffffff; /* Tua cor clara */
+    color: black;
+}
+
+
+@keyframes aparecer {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); /* Começa um pouco abaixo */
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0);    /* Termina na posição original */
+            }
+        }
+
+        /* 2. Aplicamos ao corpo da página ou a um elemento específico */
+        .animar-entrada {
+            /* Nome da animação | Duração | Tipo de transição */
+            animation: aparecer 1.5s ease-out;
+        }
+
+
+.containerp {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* MUDANÇA AQUI: */
+    padding: 15px 5px;   /* Reduzimos o padding vertical para não "esmagar" os botões */
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    
+    /* Garante que a altura seja baseada no conteúdo, sem limite rígido */
+    height: auto;        
+    min-height: fit-content; 
+    
+    box-shadow: 5px 5px 40px rgb(68, 65, 63);
+    border-radius: 0 0 30px 30px;
+    
+    /* SEGURANÇA: Remove qualquer overflow que esconda os botões */
+    overflow: visible; 
+
+    /* Configurações que não mudam (tamanho, bordas, etc) */
+}
+
+/* Quando o tema for ESCURO (Padrão: sem a classe fundo-claro) */
+html:not(.fundo-claro) .containerp {
+   background-color: rgba(26, 26, 26, 0.9); /* Sua cor escura do container */
+    color: white;
+}
+
+/* Quando o tema for CLARO */
+html.fundo-claro .containerp {
+    background-color: rgb(228, 228, 228, 0.9);
+    color: black;
+}
+
+
+/* 1. Por padrão, esconde a logo clara e mostra a escura */
+.logo-light {
+    width: 150px;
+    height: 150px;
+    padding-bottom: 20px;
+
+    cursor: pointer;
+
+    transition: transform 0.2s;
+    display: none;
+}
+
+.logo-dark {
+    width: 150px;
+    height: 150px;
+    padding-bottom: 20px;
+
+    cursor: pointer;
+
+    transition: transform 0.2s;
+    display: block;
+}
+
+/* 2. Quando o tema for CLARO, inverta tudo */
+html.fundo-claro .logo-light {
+    display: block;
+    width: 150px;
+    height: 150px;
+    padding-bottom: 20px;
+
+    cursor: pointer;
+
+    transition: transform 0.2s;
+}
+
+html.fundo-claro .logo-dark {
+    display: none;
+    width: 150px;
+    height: 150px;
+    padding-bottom: 20px;
+
+    cursor: pointer;
+
+    transition: transform 0.2s;
+}
+
+
+
+.logo{
+    width: 150px;
+    height: 150px;
+
+    cursor: pointer;
+
+    transition: transform 0.2s;
+}
+
+.logo-dark:active {
+            transform: scale(0.9); /* A imagem "encolhe" um pouco ao clicar */
+        }
+
+.logo-light:active {
+            transform: scale(0.9); /* A imagem "encolhe" um pouco ao clicar */
+        }
+
+
+
+
+.btnmenu {
+
+    background-color: rgba(255, 255, 255, 0.9);
+    color: rgb(0, 0, 0);
+    transition: 0.3s;
+
+    transition: transform 0.2s;
+}
+
+.btnmenu:active {
+
+     transform: scale(0.9);
+
+}
+
+
+html.fundo-claro .btnmenu {
+    background-color: rgba(26, 26, 26, 0.9);
+    color: #ffffff;
+}
+
+
+.btnbackup {
+    background-color: rgba(6, 255, 243, 0.9);
+    color: rgb(0, 0, 0);
+
+    transition: transform 0.2s;
+}
+
+
+.btnbackup:active {
+
+     transform: scale(0.9);
+
+}
+
+
+html.fundo-claro .btnbackup {
+    background-color: rgba(6, 255, 160, 0.9);
+    color: rgb(0, 0, 0);
+}
+
+
+
+html.fundo-claro .filo {
+    background-color: #f9f9f9;
+    color: #000000;
+    box-shadow: 2px 2px 10px rgb(0, 0, 0);
+}
+
+
+
+.containers
+{
+    width: 100%;
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    
+   
+    padding-top: 50vh; 
+    
+   
+    
+    padding-bottom: 50px; 
+
+
+   
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box; 
+
+    padding-top: 50vh; 
+    padding-bottom: 50px;
+
+}
+
+
+.btnmenu 
+{
+ width: 115px;
+height: 35px;
+background-color: rgba(255, 255, 255, 0.9);
+border-radius: 20px;
+font-family: 'Archivo Black', sans-serif;
+text-transform: uppercase;
+font-size: 75%;
+
+}
+
+.btnbackup {
+
+width: 115px;
+height: 35px;
+background-color: rgba(6, 255, 243, 0.9);
+border-radius: 20px;
+font-family: 'Archivo Black', sans-serif;
+text-transform: uppercase;
+align-items: center;
+justify-content: center;
+display: flex;  
+flex-direction: column;
+margin-top: 5%;
+font-size: 75%;
+}
+
+.btnfbackup{
+
+width: 200px;
+height: 55px;
+background-color: rgba(6, 255, 243, 0.9);
+box-shadow: 2px 1px 20px rgb(96, 205, 248);
+border-radius: 20px;
+font-family: 'Archivo Black', sans-serif;
+text-transform: uppercase;
+align-items: center;
+justify-content: center;
+display: flex;  
+flex-direction: column;
+margin-top: 5%;
+font-size: 75%;
+
+transition: transform 0.2s;
+}
+
+.btnfbackup:active{
+
+transform: scale(0.9);
+
+}
+
+.btnrestaurar {
+
+width: 200px;
+height: 55px;
+background-color: rgba(0, 252, 13, 0.9);
+box-shadow: 2px 1px 20px rgb(0, 255, 64);
+border-radius: 20px;
+font-family: 'Archivo Black', sans-serif;
+text-transform: uppercase;
+align-items: center;
+justify-content: center;
+display: flex;  
+flex-direction: column;
+margin-top: 5%;
+font-size: 75%;
+
+transition: transform 0.2s;
+}
+
+
+.btnrestaurar:active {
+
+    transform: scale(0.9);
+
+}
+
+
+#arquivoBackup {
+
+box-shadow: 2px 1px 20px rgb(0, 255, 64);
+font-size: 15px;
+font-family: 'Montserrat', sans-serif;
+
+}
+
+
+.he {
+font-size: 20px;
+font-family: 'Montserrat', sans-serif;
+} 
+
+.hum {
+
+font-size: 25px;
+font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -2px; 
+}
+
+.danger {
+    font-size: 20px;
+font-family: 'Montserrat', sans-serif;
+box-shadow: 2px 2px 20px rgb(85, 16, 16);
+
+}
+
+.filo {
+ /* 1. CENTRALIZAÇÃO EXTERNA */
+
+ background-color: #1a1a1a; /* Tua cor escura */
+    color: rgb(255, 255, 255);
+
+    display: block;        /* Muda para block para a margem auto funcionar */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    /* 2. CONTROLO DE LARGURA */
+    width: 90%;            /* Ocupa 90% da largura da tela */
+    max-width: 400px;      /* Não deixa ficar gigante no PC */
+    
+    /* 3. ESTILO VISUAL (O seu original) */
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px white;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda fina para ajudar no limite */
+    
+    /* 4. ORGANIZAÇÃO INTERNA */
+    padding: 20px;
+    box-sizing: border-box; /* IMPRESCINDÍVEL: mantém a largura nos 90% certinhos */
+    
+    /* Se precisar que o conteúdo dentro dela seja flex: */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+/* Segurança de largura */
+    width: 100%; 
+    max-width: 90%; /* Garante que nunca encoste 100% no mobile */
+    padding: 20px;
+    box-sizing: border-box;
+
+ 
+
+}
+
+
+
+
+.nolink  {
+
+text-decoration: none;
+color: rgb(0, 0, 0);
+
+}
+
+.btnsalvar {
+
+width: 120px;
+height: 40px;
+background-color: rgba(81, 255, 58, 0.9);
+border-radius: 20px;
+font-family: 'Archivo Black', sans-serif;
+color: rgb(15, 39, 10);
+box-shadow: 2px 1px 20px rgb(96, 248, 103);
+font-size: 14px;
+
+transition: transform 0.2s;
+
+}
+
+.btnsalvar:active {
+
+transform: scale(0.9);
+
+}
+
+.btnedit {
+
+width: 65px;
+height: 30px;
+background-color: rgba(238, 255, 0, 0.9);
+border-radius: 20px;
+font-family: 'Archivo Black', sans-serif;
+color: rgb(15, 39, 10);
+box-shadow: 2px 1px 5px rgb(238, 248, 96);
+font-size: 12px;
+margin-top: 10px;
+
+transition: transform 0.2s;
+}
+
+.btnedit:active {
+
+transform: scale(0.9);
+
+}
+
+.btnexc {
+
+width: 65px;
+height: 30px;
+background-color: rgba(255, 99, 99, 0.9);
+border-radius: 20px;
+font-family: 'Archivo Black', sans-serif;
+color: rgb(15, 39, 10);
+box-shadow: 2px 1px 5px rgb(248, 114, 114);
+font-size: 12px;
+margin-top: 10px;
+
+transition: transform 0.2s;
+}
+
+.btnexc:active {
+
+transform: scale(0.9);
+
+
+}
+
+.inputtxt {
+ border-radius: 20px;
+ background-color: #f0f0f0;
+ width: 300px;
+height: 25px;
+text-align: center;
+}
+
+.busque {
+    font-family: 'Archivo Black', sans-serif;
+}
+
+
+
+
+
+
+@media (max-width: 600px) /*MOBILE*/ {
+
+.containers
+{
+ padding-top: 360px;
+}
+
+
+
+        
+
+.btnmenu 
+{
+ width: 120px;
+height: 55px;
+background-color: rgba(255, 255, 255, 0.9);
+border-radius: 20px;
+font-family: 'Archivo Black', sans-serif;
+text-transform: uppercase;
+font-size: 75%;
+
+
+
+}
+
+/* O estado inicial do modal (escondido) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 100%;
+
+    
+    display: flex;            /* Deixamos flex por padrão */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* Aqui está a mágica da animação */
+    opacity: 0;               /* Invisível */
+    visibility: hidden;       /* Bloqueia cliques enquanto invisível */
+    transition: all 0.3s ease-in-out; 
+
+     z-index: 10;
+
+
+}
+
+/* O conteúdo do modal (a caixinha branca/escura) */
+.modal-content {
+    transform: scale(0.7);    /* Começa um pouco menor */
+    transition: all 0.3s ease-in-out;
+
+    /* AJUSTE O TAMANHO AQUI */
+    width: 100%;            /* Largura responsiva */
+    max-width: 500px;      /* Largura máxima (ajusta ao que era antes) */
+  
+    padding: 20px;
+
+ border-radius: 26px;
+    box-shadow: 1px 1px 10px rgb(251, 255, 1);
+
+   
+}
+
+/* Classe que o JavaScript vai adicionar para mostrar */
+.modal-overlay.mostrar {
+    opacity: 1;
+    visibility: visible;
+
+    opacity: 99%;
+  
+}
+
+.modal-overlay.mostrar .modal-content {
+    transform: scale(1);      /* Volta ao tamanho normal */
+}
+
+}
+
+
+@media (min-width: 768px) {
+    .filo {
+        max-width: 600px; /* No PC a caixa pode ser um pouco maior */
+    }
+
+    .item-lista {
+        flex-direction: row; /* Volta a ficar tudo na mesma linha no PC */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+/* O estado inicial do modal (escondido) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    
+    display: flex;            /* Deixamos flex por padrão */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* Aqui está a mágica da animação */
+    opacity: 0;               /* Invisível */
+    visibility: hidden;       /* Bloqueia cliques enquanto invisível */
+    transition: all 0.3s ease-in-out; 
+
+     z-index: 10;
+
+
+}
+
+/* O conteúdo do modal (a caixinha branca/escura) */
+.modal-content {
+    transform: scale(0.7);    /* Começa um pouco menor */
+    transition: all 0.3s ease-in-out;
+
+    /* AJUSTE O TAMANHO AQUI */
+    width: 100%;            /* Largura responsiva */
+    max-width: 500px;      /* Largura máxima (ajusta ao que era antes) */
+  
+  
+    padding: 20px;
+
+ border-radius: 26px;
+    box-shadow: 1px 1px 10px rgb(251, 255, 1);
+
+   
+}
+
+/* Classe que o JavaScript vai adicionar para mostrar */
+.modal-overlay.mostrar {
+    opacity: 1;
+    visibility: visible;
+
+    opacity: 99%;
+  
+}
+
+.modal-overlay.mostrar .modal-content {
+    transform: scale(1);      /* Volta ao tamanho normal */
+}
+
+}
+
+.fundo-claro {
+background-color: #FFFAF0;
+color: black;
+}
+
+.container-claro {
+
+    background-color: rgb(228, 228, 228, 0.9);
+box-shadow: 5px 5px 40px rgb(0, 0, 0);
+}
+
+.btnmenu-claro{
+    background-color: rgba(26, 26, 26, 0.9);
+    color: #ffffff;
+}
+
+.btnbackup-claro{
+    background-color: #00ffaae6;
+    color: #413f3f;
+}
+
+.filo-claro{
+    box-shadow: 2px 2px 10px rgb(0, 0, 0);
+}
+
+
+.beta {
+font-size: 10px;
+}
+
+.item-nome {
+    color: #ffffff;
+}
+.item-pass {
+    color: #d1d1d1;
+}
+
+
+.fundo-claro .item-nome {
+    color: #1a1a1a; 
+}
+.fundo-claro .item-pass {
+    color: #555555; 
+}
+
+
+
+#form-edicao {
+    background-color: #1e1e1e; /* Fundo escuro padrão */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    margin: 20px 0;
+    border: 1px solid #333;
+}
+
+/* Estilização dos Inputs */
+#form-edicao input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    color: white;
+    box-sizing: border-box; /* Garante que o padding não quebre a largura */
+}
+
+/* Estilização dos Botões */
+.btn-salvar {
+    background-color: #4CAF50;
+    color: white;
+    margin-right: 10px;
+}
+
+.btn-salvar:hover { background-color: #45a049; }
+
+.btn-cancelar {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-cancelar:hover { background-color: #da190b; }
+
+/* --- ADAPTAÇÃO PARA O MODO CLARO --- */
+
+.fundo-claro #form-edicao {
+    background-color: #ffffff;
+    border-color: #ddd;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.fundo-claro #form-edicao input {
+    background-color: #f9f9f9;
+    border-color: #ccc;
+    color: #333;
+}
+
+.fundo-claro #form-edicao label {
+    color: #333;
+}
+
+
+.btnatualizar {
+
+width: 90px;
+height: 40px;
+background-color: rgba(81, 255, 58, 0.9);
+border-radius: 20px;
+font-family: 'Archivo Black', sans-serif;
+color: rgb(15, 39, 10);
+box-shadow: 2px 1px 20px rgb(96, 248, 103);
+font-size: 14px;
+
+transition: transform 0.2s;
+
+}
+
+.btnatualizar:active {
+
+transform: scale(0.9);
+
+}
+
+.btncancelar {
+
+width: 90px;
+height: 40px;
+background-color: rgba(255, 60, 0, 0.9);
+border-radius: 20px;
+font-family: 'Archivo Black', sans-serif;
+color: rgb(43, 17, 17);
+box-shadow: 2px 1px 20px rgb(255, 60, 0);
+font-size: 14px;
+
+
+transition: transform 0.2s;
+}
+
+.btncancelar:active {
+
+transform: scale(0.9);
+
+}
+
+
+
+hr {
+   
+    width: 100%; 
+    
+    
+    height: 1px; 
+    
+   
+    border: none;
+    
+  
+    border-top: 2px solid rgb(255, 255, 255); 
+    
+   
+    flex-shrink: 0; 
+    
+    
+    margin: 20px 0; 
+
+    box-shadow: 2px 1px 5px rgb(0, 0, 0);
+}
+
+
+.item-lista {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+
+
+.item-lista span {
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    word-break: break-all;
+    width: 100%;
+}
+
+
+.botoes-acao {
+    display: flex !important;
+    flex-direction: row !important; 
+    flex-wrap: nowrap !important; 
+    gap: 10px;
+    width: auto;
+}
+
+
+.botoes-acao-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 15px;
+ flex-shrink: 0; 
+}
+
+.item-lista::before {
+    margin-top: 7px;
+    margin-right: 10px;
+    font-size: 10px;
+}
+
+.campo-edicao {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.campo-edicao input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; 
+}
+
+
+
+@keyframes aparecerSuave {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+details[open] .he {
+    animation: aparecerSuave 0.4s ease-out forwards;
+}
+
+
+details .he {
+    display: block;
+}
+
+
+
+
+.nekoedit {
+
+    width: 50px;
+    height: 50px;
+    
+}
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<script>
+// BLOQUEIO INSTANTÂNEO
+        if (localStorage.getItem("temaSelecionado") === "claro") {
+            document.documentElement.classList.add("fundo-claro");
+        }
+
+        // Esse código roda antes de qualquer elemento (inclusive o containerp) ser lido
+        (function() {
+            if (localStorage.getItem("temaSelecionado") === "claro") {
+                document.documentElement.classList.add("fundo-claro");
+            }
+        })();
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <title>Nekolock</title>
+</head>
+<body class="animar-entrada">
+
+
+<div class="containerp">
+    <div class="logo-container" id="btntema">
+    <img src="images/Nekolock icon.png" class="logo-dark">
+    
+    <img src="images/Nekolock iconw.png" class="logo-light">
+</div>
+
+    <div>
+        <a href="Inicio.html" class="nolink"><button class="btnmenu">Início &#x1F3E0</button></a>
+       <a href="Buscar.html" class="nolink"> <button class="btnmenu">Buscar &#x1F50E</button></a><br>
+           <a href="Adicionar.html" class="nolink"> <button class="btnmenu">Adicionar &#x2795</button></a>
+            <a href="Editar.html" class="nolink"><button class="btnmenu">Editar &#x1FA9B</button></a>
+       
+
+         </div>
+          <a href="Backup.html" class="nolink"><button class="btnbackup">&#x1F4C4 Backup &#x1F511</button></a>
+          
+</div>
+
+       
+       
+   
+
+
+               <div class="containers">
+                   <fieldset class="filo" style="text-align: center;">
+                       <h1 class="he">Nekolock<sup class="beta">beta</sup> - Seu gerenciador de senhas local <br> <br>
+                    Para mais informações, clique nas funcionalidades abaixo:</h1>
+             
+<details>
+<summary class="hum">Busque &#x1F50E</summary>
+<p class="he">Busque suas senhas que você já adicionou, além de já aparecer todas as senhas de uma vez, você pode inserir palavras-chave na caixa de texto para encontrar uma senha específica.</p>
+</details> <br>
+
+<details>
+<summary class="hum">Adicione &#x2795</summary>
+<p class="he">Adicione senhas (ou qualquer informação~) existentes ou não existentes, você pode inserir informações diversas sem limitações ou qualquer requisito.</p>
+</details> <br>
+
+<details>
+<summary class="hum">Edite &#x1FA9B</summary>
+<p class="he">Edite suas senhas, renomeando informações ou apagando. Aparecerá uma caixa de edição abaixo das suas senhas.</p>
+</details> <br>
+
+<details>
+<summary class="hum">&#x1F4C4 Faça Backup &#x1F511</summary>
+<p class="he">Leve/Traga suas senhas para outros dispositivos/navegadores (incluindo computadores, celulares, e outros dispositivos compativeis com navegadores).</p>
+</details>
+
+
+                   </fieldset>
+                    <h2 class="danger" style="text-align: center;"><em> &#x26A0 Suas informações são salvas no seu próprio navegador &#x26A0</em></h2>
+                    
+               </div>
+
+            
+             
+
+        
+    
+    <script src="js/main.js">
+
+
+    </script>
+
+</body>
+</html>
